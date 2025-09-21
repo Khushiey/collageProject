@@ -8,6 +8,8 @@ const VoiceChatbot = () => {
   const [isRecording, setIsRecording] = useState(false);
   const recognitionRef = useRef(null);
 
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL; 
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const SpeechRecognition =
@@ -30,7 +32,7 @@ const VoiceChatbot = () => {
           ]);
 
           try {
-            const res = await fetch("https://aiaudiochatbot-backend.vercel.app/api/ask-groq", {
+            const res = await fetch(`${baseUrl}/api/ask-groq`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ question: transcript }),

@@ -33,12 +33,11 @@ export function MapDirections() {
     const [isLoading, setIsLoading] = useState(false)
     const [isGettingLocation, setIsGettingLocation] = useState(false)
     const [routeInfo, setRouteInfo] = useState(null)
-    const [mapCenter, setMapCenter] = useState([27.2138, 78.0501]) // Haridwar default
+    const [mapCenter, setMapCenter] = useState([28.6139, 77.2088]) 
     const [routeCoordinates, setRouteCoordinates] = useState(null)
 
     const API_KEY = "eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6ImRlZjVhYzU0Nzg0NDQzMDM5NDQ3MDA0Y2YwM2UwNTgyIiwiaCI6Im11cm11cjY0In0="
 
-    // Get user current location
     const getCurrentLocation = () => {
         setIsGettingLocation(true)
 
